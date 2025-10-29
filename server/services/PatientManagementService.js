@@ -7,13 +7,14 @@ const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 
 /**
- * Patient Management Service - Comprehensive patient management for doctors
+ * Patient Management Service - Comprehensive patient management for doctors 
+ * Instead of the controller calling all those models separately facade
  * Integrates patient search, medical records, and patient details
  */
 class PatientManagementService {
 
   /**
-   * Get comprehensive patient dashboard for doctor
+   * Get comprehensive patient dashboard for doctor 
    * Includes recent patients, search functionality, and quick stats
    */
   async getPatientDashboard(doctorId, requestInfo) {
@@ -64,7 +65,7 @@ class PatientManagementService {
   }
 
   /**
-   * Get comprehensive patient profile with medical records
+   * Get comprehensive patient profile with medical records long
    * This replaces the separate "Medical Records" tab
    */
   async getPatientProfile(patientId, doctorId, requestInfo) {
@@ -86,7 +87,7 @@ class PatientManagementService {
         throw new Error(`User found but role is '${patient.role}', not 'patient'`);
       }
 
-      // Get medical records (all records for this patient, not just from current doctor for testing)
+      // Get medical records (all records for this patient, not long just from current doctor for testing)
       const medicalRecords = await MedicalRecord.find({
         patient: patientId,
         status: 'active'
@@ -205,7 +206,7 @@ class PatientManagementService {
   }
 
   /**
-   * Get patient list with enhanced filtering for the Patients tab
+   * Get patient list with enhanced filtering for the Patients tab open ocp
    * Only shows patients who have had appointments or medical records with this doctor
    */
   async getPatientList(filters = {}, doctorId, requestInfo) {
@@ -521,7 +522,7 @@ class PatientManagementService {
   }
 
   /**
-   * Get patient statistics for doctor (private method)
+   * Get patient statistics for doctor (private method) srp
    * @private
    */
   async _getPatientStatistics(doctorId) {
