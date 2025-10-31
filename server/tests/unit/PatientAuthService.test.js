@@ -39,7 +39,7 @@ describe('PatientAuthService - >80% Coverage Tests', () => {
   });
 
   // ============================================================================
-  // REGISTRATION TESTS - Complete Coverages
+  // REGISTRATION TESTS - Complete Coverage
   // ============================================================================
   describe('registerPatient', () => {
     beforeEach(() => {
