@@ -52,6 +52,7 @@ describe('PatientAuthService - >80% Coverage Tests', () => {
     test('should register patient successfully', async () => {
       const userData = {
         firstName: 'John',
+        
         lastName: 'Doe',
         email: 'john@test.com',
         password: 'SecurePass123',
